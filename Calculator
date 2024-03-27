@@ -1,0 +1,41 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    double num1, num2;
+    char op;
+    cout << "Enter first number: " << endl;
+    if (!(cin >> num1)) {
+        cout << "Invalid input for first number" << endl;
+        return 1; // Exit with error code
+    }
+    cout << "Enter operator: " << endl;
+    cin >> op;
+    cout << "Enter second number: " << endl;
+    if (!(cin >> num2)) {
+        cout << "Invalid input for second number" << endl;
+        return 1; // Exit with error code
+    }
+    double result;
+    if (op == '+') {
+        result = num1 + num2;
+    } else if (op == '-') {
+        result = num1 - num2;
+    } else if (op == '/') {
+        if (num2 != 0) {
+            result = num1 / num2;
+        } else {
+            cout << "Error! Division by zero is not allowed." << endl;
+            return 1; // Exit with error code
+        }
+    } else if (op == '*') {
+        result = num1 * num2;
+    } else {
+        cout << "Invalid operator" << endl;
+        return 1; // Exit with error code
+    }
+    cout << "Result: " << result << endl;
+
+    return 0;
+}
